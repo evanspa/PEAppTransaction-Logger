@@ -247,25 +247,6 @@ applied schema updates for version 0 (initial).");
 
 #pragma mark - Flush to Remote Store
 
-- (void)asynchronousWork:(NSTimer *)timer {
-  if (_authToken) {
-    if (_txnStoreResource) {
-      dispatch_async(_serialQueue, ^{
-        HCServerUnavailableBlk remoteStoreUnavailableBlk = ^(NSDate *retryAfter, NSHTTPURLResponse *resp) {
-          [timer setFireDate:[[timer fireDate] laterDate:retryAfter]];
-        };
-        [self synchronousFlushTxnsToRemoteStoreWithRemoteStoreBusyBlock:remoteStoreUnavailableBlk];
-      });
-    } else {
-      DDLogDebug(@"Skipping flush of TLTransaction instances to remote \
-server due to having a nil transaction store hypermedia resource.");
-    }
-  } else {
-    DDLogDebug(@"Skipping flush of TLTransaction instances to remote \
-server due to having a nil authentication token.");
-  }
-}
-
 - (void)synchronousFlushTxnsToRemoteStoreWithRemoteStoreBusyBlock:(HCServerUnavailableBlk)unavailBlk {
   [_databaseQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
     TLDaoErrorBlk errorBlk = ^(NSError *err, int code, NSString *msg) {
@@ -321,6 +302,27 @@ Number of transaction instances: [%ld]", (unsigned long)[transactions count]);
       DDLogDebug(@"There are currently no app-transaction logs in need of flushing.");
     }
   }];
+}
+
+#pragma mark - Timed Asynchronous Flush to Remote Store
+
+- (void)asynchronousFlushTxnsToRemoteStore:(NSTimer *)timer {
+  if (_authToken) {
+    if (_txnStoreResource) {
+      dispatch_async(_serialQueue, ^{
+        HCServerUnavailableBlk remoteStoreUnavailableBlk = ^(NSDate *retryAfter, NSHTTPURLResponse *resp) {
+          [timer setFireDate:[[timer fireDate] laterDate:retryAfter]];
+        };
+        [self synchronousFlushTxnsToRemoteStoreWithRemoteStoreBusyBlock:remoteStoreUnavailableBlk];
+      });
+    } else {
+      DDLogDebug(@"Skipping flush of TLTransaction instances to remote \
+server due to having a nil transaction store hypermedia resource.");
+    }
+  } else {
+    DDLogDebug(@"Skipping flush of TLTransaction instances to remote \
+server due to having a nil authentication token.");
+  }
 }
 
 @end

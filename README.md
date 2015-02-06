@@ -226,8 +226,15 @@ application to integrate with your own web services, the various `doXXX` functio
 contain a `otherHeaders:(NSDictionary *)otherHeaders` part that is a good place
 to attach such custom request headers.
 
-### Flushing Locally-Stored Transaction Data to Remote Data Store
+#### Flushing Locally-Stored Transaction Data to Remote Data Store
 
+Both transaction and transaction log instances accumulate in your application's
+SQLite database as users use your app.  In order for the transaction log data to
+be of any value, it needs to be shipped to your server for later
+(actionable) analysis.  TLTransactionManager comes with 2 functions to perform
+this job:
++ `synchronousFlushTxnsToRemoteStoreWithRemoteStoreBusyBlock:`
++ `asynchronousFlushTxnsToRemoteStore`
 
 
 ## Installation with CocoaPods

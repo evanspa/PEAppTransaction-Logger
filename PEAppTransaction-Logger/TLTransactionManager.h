@@ -107,6 +107,10 @@ transaction and transaction log instances.
  */
 - (void)synchronousFlushTxnsToRemoteStoreWithRemoteStoreBusyBlock:(HCServerUnavailableBlk)unavailBlk;
 
+#pragma mark - Timed Asynchronous Flush to Remote Store
+
+- (void)asynchronousFlushTxnsToRemoteStore:(NSTimer *)timer;
+
 #pragma mark - Properties
 
 /**
