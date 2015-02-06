@@ -234,8 +234,53 @@ be of any value, it needs to be shipped to your server for later
 (actionable) analysis.  TLTransactionManager comes with 2 functions to perform
 this job:
 + `synchronousFlushTxnsToRemoteStoreWithRemoteStoreBusyBlock:`
-+ `asynchronousFlushTxnsToRemoteStore`
++ `asynchronousFlushTxnsToRemoteStore:`
 
+`asynchronousFlushTxnsToRemoteStore:` is the recommended function since it
+performs the remote flush on a background thread.  It accepts an `NSTimer *`
+instance so it's ready to be invoked by a timer.  If the remote store fronting
+web service responds with a 2XX, then the transaction log data is deleted from
+the local SQLite database.
+
+The PEAppTransaction logging framework stipulates that clients need only (HTTP)
+POST transction log data sets to the remote store fronting web service.  If you
+choose to implement your own fronting web service (as opposed to leveraging
+[PEAppTransaction-ServerResources](https://github.com/evanspa/PEAppTransaction-ServerResources))
+here's what you need to know:
+
+#### Format of JSON Request Bodies for HTTP POST Flush Calls
+
+Here is an example message that contains a single transaction instance, with 2
+child transaction log instances.
+
+```json
+{"apptxns" : [
+    {"apptxn/usecase" : 17,
+     "apptxn/user-agent-device-os-version" : "8.1.2",
+     "apptxn/id" : "TXN17-586AB00B-F16E-4AE6-8A91-0210264925C7",
+     "apptxn/user-agent-device-make" : "iPhone7,2",
+     "apptxn/user-agent-device-os" : "iPhone OS",
+     "apptxn/logs" : [
+         {"apptxnlog/usecase-event" : 0,
+          "apptxnlog/in-ctx-err-code" : null,
+          "apptxnlog/timestamp" : "Fri, 06 Feb 2015 00:59:27 EST"},
+         {"apptxnlog/usecase-event" : 1,
+          "apptxnlog/in-ctx-err-code" : null,
+          "apptxnlog/timestamp" : "Fri, 06 Feb 2015 01:23:05 EST"}
+      ]
+    }
+  ]
+}
+```
+
+The `Content-Type` header of the POST request will be something like:
+`application/vnd.peapptxnlog.apptxnset-v0.0.1+json;charset=UTF-8`
+
+The version part (the **0.0.1** bit) is based on the
+`apptxnResMtVersion:` part of TLTransactionManager's initializer that you
+provide.  The character set part (the **UTF-8**) is based on the
+`contentTypeCharset:` part of TLTransactionManager's initializer that you
+provide.
 
 ## Installation with CocoaPods
 
