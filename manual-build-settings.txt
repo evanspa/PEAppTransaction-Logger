@@ -1,0 +1,3 @@
+After doing 'pod install' or 'pod update', you'll need to remove the 2 linker
+flags: -l"sqlite3" -l"xml2"  from the 'Pods.*.xcconfig' files.  Also, make sure
+the test target has these 2 flags added to its "other_ldflags" build setting.
