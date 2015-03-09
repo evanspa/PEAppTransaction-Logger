@@ -285,5 +285,5 @@ provide.
 ## Installation with CocoaPods
 
 ```ruby
-pod "PEAppTransaction-Logger"
+pod 'PEAppTransaction-Logger', '~> 1.0.1'
 ```
