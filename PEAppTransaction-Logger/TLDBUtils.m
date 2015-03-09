@@ -23,6 +23,7 @@
 
 #import "TLDBUtils.h"
 #import "TLDDLUtils.h"
+#import <FMDB/FMDatabase.h>
 #import <FMDB/FMResultSet.h>
 
 @implementation TLDBUtils
