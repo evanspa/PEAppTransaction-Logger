@@ -22,7 +22,7 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import <FMDB.h>
+#import <FMDB/FMDatabase.h>
 #import "TLTypedefs.h"
 #import "TLTransaction.h"
 
