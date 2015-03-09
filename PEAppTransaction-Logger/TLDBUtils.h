@@ -22,11 +22,9 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import <FMDB/FMDatabase.h>
 #import "TLTypedefs.h"
 #import "TLTransaction.h"
-
-@class FMDatabase;
-@class FMResultSet;
 
 /**
  * A Collection of helper functions for simplifying interacting with the local
