@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		183635501A83358F00BD2F25 /* libPEAppTransaction-Logger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 183635441A83358F00BD2F25 /* libPEAppTransaction-Logger.a */; };
+		1863362D1AAD430E004BA7B5 /* libPEAppTransaction-Logger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 183635441A83358F00BD2F25 /* libPEAppTransaction-Logger.a */; };
 		189CB20F1A8337520089B442 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 189CB20E1A8337520089B442 /* libsqlite3.dylib */; };
 		189CB2131A8338690089B442 /* TLLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CB2121A8338690089B442 /* TLLogging.m */; };
 		189CB2221A833C0C0089B442 /* TLTransactionLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CB2211A833C0C0089B442 /* TLTransactionLog.m */; };
@@ -92,8 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1863362D1AAD430E004BA7B5 /* libPEAppTransaction-Logger.a in Frameworks */,
 				189CB20F1A8337520089B442 /* libsqlite3.dylib in Frameworks */,
-				183635501A83358F00BD2F25 /* libPEAppTransaction-Logger.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,9 +554,7 @@
 				INFOPLIST_FILE = "PEAppTransaction-LoggerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					XCTest,
+					"-ObjC",
 					"-l\"xml2\"",
 					"-l\"sqlite3\"",
 				);
@@ -576,9 +574,7 @@
 				INFOPLIST_FILE = "PEAppTransaction-LoggerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					XCTest,
+					"-ObjC",
 					"-l\"xml2\"",
 					"-l\"sqlite3\"",
 				);
