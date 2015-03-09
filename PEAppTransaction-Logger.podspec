@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.summary      = "A library for logging application transactions to be persisted to a remote store."
   s.author       = { "Paul Evans" => "evansp2@gmail.com" }
-  s.homepage     = "https://github.org/evanspa/#{s.name}"
+  s.homepage     = "https://github.com/evanspa/#{s.name}"
   s.source       = { :git => "https://github.com/evanspa/#{s.name}.git", :tag => "#{s.name}-v#{s.version}" }
   s.platform     = :ios, '8.1'
   s.source_files = '**/*.{h,m}'
