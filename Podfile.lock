@@ -52,7 +52,7 @@ PODS:
 
 DEPENDENCIES:
   - CocoaLumberjack (~> 1.9)
-  - FMDB
+  - FMDB (~> 2.5)
   - Kiwi
   - PEHateoas-Client
   - PEObjc-Commons

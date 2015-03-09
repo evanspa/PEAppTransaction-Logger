@@ -522,7 +522,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C1BF927B69876BBCEA2E4BD0 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -532,7 +532,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 61E9474982E5D433CD6A4E64 /* Pods.release.xcconfig */;
 			buildSettings = {
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
