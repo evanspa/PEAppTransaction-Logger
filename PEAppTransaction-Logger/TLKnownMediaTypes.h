@@ -29,8 +29,11 @@
 /**
  *  @param version The version to accompany the returned 'app transaction log'
 media type instance.
+ *  @param subtypePrefix Prefix string to prepend to the sub-type part of the
+media type.
  *  @return A 'app transaction log' media type instance for the given version.
  */
-+ (HCMediaType *)txnSetMediaTypeWithVersion:(NSString *)version;
++ (HCMediaType *)txnSetMediaTypeWithVersion:(NSString *)version
+                         mediaSubTypePrefix:(NSString *)subtypePrefix;
 
 @end

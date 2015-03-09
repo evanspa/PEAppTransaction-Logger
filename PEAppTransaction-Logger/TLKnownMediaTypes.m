@@ -24,17 +24,18 @@
 #import "TLKnownMediaTypes.h"
 
 NSString * const applicationType = @"application/";
-NSString * const evansSubtypePrefix = @"vnd.peapptxnlog.";
+NSString * const subtype = @"apptxnset";
 NSString * const jsonSubtypePostfix = @"+json";
 
-NSString * (^mtBuilder)(NSString *, NSString *) = ^NSString *(NSString *mtId, NSString *version) {
-  return [NSString stringWithFormat:@"%@%@%@-v%@%@", applicationType, evansSubtypePrefix, mtId, version, jsonSubtypePostfix];
+NSString * (^mtBuilder)(NSString *, NSString *, NSString *) = ^NSString *(NSString *mtId, NSString *subtypePrefix, NSString *version) {
+    return [NSString stringWithFormat:@"%@%@%@-v%@%@", applicationType, subtypePrefix, mtId, version, jsonSubtypePostfix];
 };
 
 @implementation TLKnownMediaTypes
 
-+ (HCMediaType *)txnSetMediaTypeWithVersion:(NSString *)version {
-  return [HCMediaType MediaTypeFromString:mtBuilder(@"apptxnset", version)];
++ (HCMediaType *)txnSetMediaTypeWithVersion:(NSString *)version
+                         mediaSubTypePrefix:(NSString *)subtypePrefix {
+  return [HCMediaType MediaTypeFromString:mtBuilder(subtype, subtypePrefix, version)];
 }
 
 @end

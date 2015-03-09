@@ -87,6 +87,7 @@ describe(@"TLTransactionManager", ^{
                      authTokenParamName:@"auth-token"
                      contentTypeCharset:[HCCharset UTF8]
                      apptxnResMtVersion:@"0.0.1"
+               apptxnMediaSubtypePrefix:@"vnd.name.paulevans."
                                   error:newErrLoggerMaker()];
         [txnMgr setAuthToken:@"auth-token-val"];
         [txnMgr setTxnStoreResourceUri:[NSURL URLWithString:@"http://example.com/txn-store"]];

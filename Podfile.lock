@@ -1,0 +1,74 @@
+PODS:
+  - AFNetworking (2.5.1):
+    - AFNetworking/NSURLConnection (= 2.5.1)
+    - AFNetworking/NSURLSession (= 2.5.1)
+    - AFNetworking/Reachability (= 2.5.1)
+    - AFNetworking/Security (= 2.5.1)
+    - AFNetworking/Serialization (= 2.5.1)
+    - AFNetworking/UIKit (= 2.5.1)
+  - AFNetworking/NSURLConnection (2.5.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.1)
+  - AFNetworking/Security (2.5.1)
+  - AFNetworking/Serialization (2.5.1)
+  - AFNetworking/UIKit (2.5.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - AWPagedArray (0.3.0)
+  - CocoaLumberjack (1.9.2):
+    - CocoaLumberjack/Extensions (= 1.9.2)
+  - CocoaLumberjack/Core (1.9.2)
+  - CocoaLumberjack/Extensions (1.9.2):
+    - CocoaLumberjack/Core
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - KissXML (5.0)
+  - Kiwi (2.3.1)
+  - OHHTTPStubs (3.1.10):
+    - OHHTTPStubs/Core (= 3.1.10)
+  - OHHTTPStubs/Core (3.1.10)
+  - PEHateoas-Client (1.0.0):
+    - AFNetworking
+    - CocoaLumberjack (~> 1.9)
+    - PEObjc-Commons
+  - PEObjc-Commons (1.0.0):
+    - AWPagedArray
+  - PEWire-Control (1.0.0):
+    - OHHTTPStubs
+    - PEObjc-Commons
+    - PEXML-Utils
+  - PEXML-Utils (1.0.0):
+    - KissXML
+    - PEObjc-Commons
+
+DEPENDENCIES:
+  - CocoaLumberjack (~> 1.9)
+  - FMDB
+  - Kiwi
+  - PEHateoas-Client
+  - PEObjc-Commons
+  - PEWire-Control
+
+SPEC CHECKSUMS:
+  AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
+  AWPagedArray: c66f6186321cd37bff0a26e714f157f5d27009e9
+  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
+  FMDB: 0efa188cf0dd1ce82c27a478cd5f5fa245308677
+  KissXML: e537c38b18ede903ee6de45953a9bd86c131ebe9
+  Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
+  OHHTTPStubs: 2038e929b6abb94881000524c1cb4aba0a1bb4a2
+  PEHateoas-Client: 8de3dd3edbd9a800ff2f3ceefc3679acfc2f0137
+  PEObjc-Commons: c84b71cf4f4c4cfe5fd59c33e771f59ffffcbfe5
+  PEWire-Control: 2f71ff67a48b2b0d45a37f947eb90c73d98e3dfb
+  PEXML-Utils: abaa387da230db8374c165168a9ffd3553d6b523
+
+COCOAPODS: 0.35.0

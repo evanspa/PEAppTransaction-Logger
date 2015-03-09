@@ -65,6 +65,7 @@ transaction and transaction log instances.
         authTokenParamName:(NSString *)authTokenParamName
         contentTypeCharset:(HCCharset *)contentTypeCharset
         apptxnResMtVersion:(NSString *)apptxnResMtVersion
+  apptxnMediaSubtypePrefix:(NSString *)apptxnMediaSubtypePrefix
                      error:(TLDaoErrorBlk)errBlk;
 
 #pragma mark - Creating new transaction instances

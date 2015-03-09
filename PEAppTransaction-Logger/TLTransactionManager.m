@@ -66,6 +66,7 @@ uint32_t const TL_REQUIRED_SCHEMA_VERSION = 1;
         authTokenParamName:(NSString *)authTokenParamName
         contentTypeCharset:(HCCharset *)contentTypeCharset
         apptxnResMtVersion:(NSString *)apptxnResMtVersion
+  apptxnMediaSubtypePrefix:(NSString *)apptxnMediaSubtypePrefix
                      error:(TLDaoErrorBlk)errBlk {
   self = [super init];
   if (self) {
@@ -80,7 +81,8 @@ uint32_t const TL_REQUIRED_SCHEMA_VERSION = 1;
     _authScheme = authScheme;
     _authTokenParamName = authTokenParamName;
     _txnSetSerializer =
-      [[TLTransactionSetSerializer alloc] initWithMediaType:[TLKnownMediaTypes txnSetMediaTypeWithVersion:apptxnResMtVersion]
+      [[TLTransactionSetSerializer alloc] initWithMediaType:[TLKnownMediaTypes txnSetMediaTypeWithVersion:apptxnResMtVersion
+                                                                                       mediaSubTypePrefix:apptxnMediaSubtypePrefix]
                                                     charset:contentTypeCharset
                             serializersForEmbeddedResources:@{}
                                 actionsForEmbeddedResources:@{}];
