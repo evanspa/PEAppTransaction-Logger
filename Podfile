@@ -2,7 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '8.1'
 
-pod 'FMDB'
+pod 'FMDB', '~> 2.5'
 pod 'PEObjc-Commons'
 pod 'PEHateoas-Client'
 pod 'CocoaLumberjack', '~> 1.9'
