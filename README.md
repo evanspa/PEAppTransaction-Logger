@@ -4,6 +4,16 @@
 
 An iOS static library client for the **PEAppTransaction Logging Framework**.
 
+**Table of Contents**
+
+- [PEAppTransaction Logging Framework](#peapptransaction-logging-framework)
+  - [Motivation](#motivation)
+- [About PEAppTransaction-Logger](#about-peapptransaction-logger)
+- [Usage Guide](#usage-guide)
+    - [Flushing Locally-Stored Transaction Data to Remote Data Store](#flushing-locally-stored-transaction-data-to-remote-data-store)
+    - [Format of JSON Request Bodies for HTTP POST Flush Calls](#format-of-json-request-bodies-for-http-post-flush-calls)
+- [Installation with CocoaPods](#installation-with-cocoapods)
+
 ## PEAppTransaction Logging Framework
 
 The *PEAppTransaction Logging Framework* is a framework for capturing important
