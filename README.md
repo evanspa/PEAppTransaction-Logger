@@ -12,6 +12,7 @@ An iOS static library client for the **PEAppTransaction Logging Framework**.
 - [Usage Guide](#usage-guide)
     - [Flushing Locally-Stored Transaction Data to Remote Data Store](#flushing-locally-stored-transaction-data-to-remote-data-store)
     - [Format of JSON Request Bodies for HTTP POST Flush Calls](#format-of-json-request-bodies-for-http-post-flush-calls)
+- [Reference Application](#reference-application)
 - [Installation with CocoaPods](#installation-with-cocoapods)
 
 ## PEAppTransaction Logging Framework
@@ -290,6 +291,14 @@ The version part (the **0.0.1** bit) is based on the
 provide.  The character set part (the **UTF-8**) is based on the
 `contentTypeCharset:` part of TLTransactionManager's initializer that you
 provide.
+
+## Reference Application
+
+To see how the PEAppTransaction client logger is used in a working application,
+look at the
+[PEFuelPurchase-App application](https://github.com/evanspa/PEFuelPurchase-App).
+The fuel purchase application serves as the reference application for the PE*
+suite of iOS client libraries.
 
 ## Installation with CocoaPods
 
