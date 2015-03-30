@@ -18,8 +18,8 @@ An iOS static library client for the **PEAppTransaction Logging Framework**.
 
 The *PEAppTransaction Logging Framework* is a framework for capturing important
 events within your applications.  It is comprised of 3 main components: (1)
-[the data store](https://github.com/evanspa/PEAppTransaction-DataStore), (2)
-[the web service layer](https://github.com/evanspa/PEAppTransaction-ServerResources)
+[the core data layer](https://github.com/evanspa/pe-apptxn-core), (2)
+[the web service layer](https://github.com/evanspa/pe-apptxn-restsupport)
 and (3) client libraries.
 
 This repository, *PEAppTransaction-Logger*, represents an iOS client library to the framework.
@@ -49,20 +49,19 @@ application; transaction logs are used to track particular timestamped events
 about individual use cases.
 
 These transaction and transaction logs are stored locally in a SQLite database,
-and are meant to be persisted to the
-[remote data store](https://github.com/evanspa/PEAppTransaction-DataStore) (*for
-later analysis*).  The remote data store is intended to be fronted by a
-[web service layer](https://github.com/evanspa/PEAppTransaction-ServerResources).
+and are meant to be persisted to a remote date store (for offline analysis).
+The [pe-apptxn-core](https://github.com/evanspa/pe-apptxn-core) repository
+represents a Clojure-based library implementing such a data store.  This library
+provides a [Datomic](http://www.datomic.com) schema file, as well as CRUD data
+access functions.
 
-The
-[PEAppTransaction-DataStore](https://github.com/evanspa/PEAppTransaction-DataStore)
-repository houses a [Datomic](http://www.datomic.com) based schema for the data store.
-
-The
-[PEAppTransaction-ServerResources](https://github.com/evanspa/PEAppTransaction-ServerResources)
-repository houses a web service layer implementation written in
-[Clojure](http://clojure.org) and leverages the
-[Liberator](http://clojure-liberator.github.io/liberator/) framework.
+In addition,
+[pe-apptxn-restsupport](https://github.com/evanspa/pe-apptxn-restsupport) exists
+as a convenient library exposing a REST API on top of pe-apptxn-core.
+pe-apptxn-restsupport is also implemented in Clojure, and leverages
+[Liberator](http://clojure-liberator.github.io/liberator/).
+pe-apptxn-restsupport provides a set of Liberator resources that could easily be
+included in a concrete REST application.
 
 ## Usage Guide
 
