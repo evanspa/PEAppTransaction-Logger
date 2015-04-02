@@ -4,6 +4,9 @@
 
 An iOS static library client for the **PEAppTransaction Logging Framework**.
 
+PEAppTransaction-Logger is also a part of the
+[PE* iOS Library Suite](#pe-ios-library-suite).
+
 **Table of Contents**
 
 - [PEAppTransaction Logging Framework](#peapptransaction-logging-framework)
@@ -14,6 +17,7 @@ An iOS static library client for the **PEAppTransaction Logging Framework**.
     - [Format of JSON Request Bodies for HTTP POST Flush Calls](#format-of-json-request-bodies-for-http-post-flush-calls)
 - [Reference Application](#reference-application)
 - [Installation with CocoaPods](#installation-with-cocoapods)
+- [PE* iOS Library Suite](#pe-ios-library-suite)
 
 ## PEAppTransaction Logging Framework
 
@@ -305,3 +309,21 @@ suite of iOS client libraries.
 ```ruby
 pod 'PEAppTransaction-Logger', '~> 1.0.1'
 ```
+
+## PE* iOS Library Suite
+*(Each library is implemented as a CocoaPod-enabled iOS static library.)*
++ **[PEObjc-Commons](https://github.com/evanspa/PEObjc-Commons)**: a library
+  providing a set of everyday helper functionality.
++ **[PEXML-Utils](https://github.com/evanspa/PEXML-Utils)**: a library
+  simplifying working with XML.  Built on top of [KissXML](https://github.com/robbiehanson/KissXML).
++ **[PEHateoas-Client](https://github.com/evanspa/PEHateoas-Client)**: a library
+  for consuming hypermedia REST APIs.  I.e. those that adhere to the *Hypermedia
+  As The Engine Of Application State ([HATEOAS](http://en.wikipedia.org/wiki/HATEOAS))* constraint.  Built on top of [AFNetworking](https://github.com/AFNetworking/AFNetworking).
++ **[PEWire-Control](https://github.com/evanspa/PEWire-Control)**: a library for
+  controlling Cocoa's NSURL loading system using simple XML files.  Built on top of [OHHTTPStubs](https://github.com/AliSoftware/OHHTTPStubs).
++ **PEAppTransaction-Logger**: this library.
++ **[PESimu-Select](https://github.com/evanspa/PESimu-Select)**: a library
+  aiding in the functional testing of web service enabled iOS applications.
++ **[PEDev-Console](https://github.com/evanspa/PEDev-Console)**: a library
+  aiding in the functional testing of iOS applications.
+
