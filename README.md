@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/evanspa/PEAppTransaction-Logger.svg)](https://travis-ci.org/evanspa/PEAppTransaction-Logger)
 
-An iOS static library client for the **PEAppTransaction Logging Framework**.
+An iOS static library client for the [PEAppTransaction Logging Framework](#peapptransaction-logging-framework).
 
 PEAppTransaction-Logger is also a part of the
 [PE* iOS Library Suite](#pe-ios-library-suite).
