@@ -22,7 +22,7 @@ PEAppTransaction-Logger is also a part of the
 ## PEAppTransaction Logging Framework
 
 The *PEAppTransaction Logging Framework* (PELF) is a framework for capturing important
-events within your applications.  It is comprised of 3 main components: (1)
+events within your applications.  It is comprised of 3 main tiers: (1)
 [the core data layer](https://github.com/evanspa/pe-apptxn-core), (2)
 [the web service layer](https://github.com/evanspa/pe-apptxn-restsupport)
 and (3) client libraries.
